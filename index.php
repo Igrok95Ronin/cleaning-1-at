@@ -1,11 +1,11 @@
 <?php
-$site_data      = json_decode(file_get_contents('http://templates.jquery.link/api/' . $_SERVER['HTTP_HOST']), true);
+$site_data      = json_decode(file_get_contents('http://local.jquery.link/api/' . $_SERVER['HTTP_HOST']), true);
 
 $phone_name     = $site_data['phone_name'];
 $phone_href     = $site_data['phone_href'];
 
-$text           = str_replace('+', ' ', trim($_GET['t'] ?? 'Entrumpelung'));
-$city           = str_replace('+', ' ', trim($_GET['n'] ?? 'in der nahe'));
+$text           = str_replace('+', ' ', trim($_GET['t'] ?? 'Mit einem Team erfahrener Reinigungskräfte'));
+$city           = str_replace('+', ' ', trim($_GET['n'] ?? 'und modernster Ausrüstung'));
 
 $title = $text . ' ' . $city;
 ?>
@@ -32,12 +32,12 @@ $title = $text . ' ' . $city;
                 <div class="col-12 container">
                     <div class="header__top">
                         <img class="header__logo" src="./assets/img/logo-header.png" alt="" >
-                        <a class="Btn" href="#" ><span>111222333</span></a>
+                        <a class="Btn" href="<?= $phone_href ?>" ><span><?= $phone_name ?></span></a>
                     </div>
                     <div class="header__bottom">
                         <h1 class="header__title">Mit einem Team erfahrener <span>Reinigungskräfte</span><br /> und modernster Ausrüstung</h1>
                         <p class="header__dscr">kümmern wir uns um Ihre Außen- und Innenflächen. </p>
-                        <a class="Btn" href="#" ><span>111222333</span></a>
+                        <a class="Btn" href="<?= $phone_href ?>" ><span><?= $phone_name ?></span></a>
                     </div>
                 </div>
             </div>
@@ -54,7 +54,7 @@ $title = $text . ' ' . $city;
                             <div class="ourAdvantages__left">
                                 <h2 class="ourAdvantages__title">Beratung erhalten Sie von uns kostenfrei.</h2>
                                 <p class="ourAdvantages__dscr">Wir als Full-Service Gebäudereinigung stehen Ihnen mit unserem breiten Leistungsspektrum mit Rat und Tat zur Seite. Unser Team verfügt über ausgezeichnete Fachkenntnisse und Equipment um Ihre Wünsche mit Bravour zu erfüllen.</p>
-                                <a class="Btn" href="#" ><span>111222333</span></a>
+                                <a class="Btn" href="<?= $phone_href ?>" ><span><?= $phone_name ?></span></a>
                             </div>
                             <div class="ourAdvantages__right">
                                 <div class="ourAdvantages__inner">
@@ -240,7 +240,7 @@ $title = $text . ' ' . $city;
                 <div class="col-12 container">
                     <div class="footer__top">
                         <img class="footer__logo" src="./assets/img/logo-header.png" alt="" >
-                        <a class="Btn" href="#" ><span>111222333</span></a>
+                        <a class="Btn" href="<?= $phone_href ?>" ><span><?= $phone_name ?></span></a>
                     </div>
                     <div class="footer__bottom">
                         © 2022
